@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class Course {
@@ -23,6 +24,9 @@ public abstract class Course {
     }
     public int getCredits(){
         return credits;
+    }
+    public List<Assessment> getAssessments(){
+        return Collections.unmodifiableList(assessments);
     }
     public void setCourseCode(String courseCode){
         if(courseCode==null||courseCode.trim().isEmpty()){

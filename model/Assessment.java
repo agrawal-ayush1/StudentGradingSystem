@@ -19,7 +19,7 @@ public class Assessment {
         this.assessmentName = assessmentName;
         this.category = category;
         this.maxMarks = maxMarks;
-        this.obtainedMarks = obtainedMarks;
+        this.obtainedMarks = 0;
         this.absent = false;
     }
     public String getAssessmentName(){
@@ -30,6 +30,12 @@ public class Assessment {
     }
     public double getMaxMarks(){
         return maxMarks;
+    }
+    public double getObtainedMarks(){
+        return obtainedMarks;
+    }
+    public boolean isAbsent(){
+        return absent;
     }
     public void setObtainedMarks(double obtainedMarks){
         validate(obtainedMarks);
