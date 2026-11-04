@@ -1,0 +1,4 @@
+"A university evaluates students across theory, laboratory, project, and internship courses.
+ Design Course, TheoryCourse, LabCourse, ProjectCourse, and Student classes. Implement different grading rules and calculate SGPA.
+Support new assessment categories without rewriting the grade calculation workflow. Handle absent students, invalid marks, and courses with different credit values.
+"
