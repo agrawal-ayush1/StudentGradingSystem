@@ -37,7 +37,7 @@ public class Assessment {
     public boolean isAbsent(){
         return absent;
     }
-    public void setObtainedMarks(double obtainedMarks){
+    public void setObtainedMark(double obtainedMarks){
         validate(obtainedMarks);
         this.obtainedMarks = obtainedMarks;
         this.absent = false;
