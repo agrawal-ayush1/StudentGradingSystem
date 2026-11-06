@@ -2,6 +2,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import grading.GradingMethod;
 public class Student {
     private String studentId;
     private String studentName;
@@ -39,5 +40,19 @@ public class Student {
         for(Course course:courses){
             System.out.println(course.getCourseCode()+"-"+course.getCourseName()+" ("+course.getCredits()+" credits");
         }
+    }
+    public double calcSGPA(){
+        if(courses.isEmpty()){
+            throw new IllegalArgumentException("No courses available");
+        }
+        double totalCreditPoints = 0;
+        int totalCredits = 0;
+        for(Course course:courses){
+            double marks = course.calculateFinalMarks();
+            int gradePoint = GradingMethod.calculateGP(marks);
+            totalCreditPoints += course.getCredits() * gradePoint;
+            totalCredits += course.getCredits();
+        }
+        return totalCreditPoints/totalCredits;
     }
 }
